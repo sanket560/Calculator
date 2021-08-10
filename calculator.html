@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+<body>
+
+
+    <div class="calculator">
+        <input class="calcul-input" type="text" placeholder="Type Number here....." onkeypress="if (event.keyCode == 13){enter()}">
+        
+        <div class="calcul">
+          <button id="open">(</button>
+          <button id="close">)</button>
+          <button id="mod">%</button>
+          <button id="c">C</button>
+          <button id="seven">7</button>
+          <button id="eight">8</button>
+          <button id="nine">9</button>
+          <button id="slash">÷</button>
+          <button id="four">4</button>
+          <button id="five">5</button>
+          <button id="six">6</button>
+          <button id="x">x</button>
+          <button id="one">1</button>
+          <button id="two">2</button>
+          <button id="three">3</button>
+          <button id="min">-</button>
+          <button id="zero">0</button>
+          <button id="point">,</button>
+          <button id="equal">=</button>
+          <button id="plus">+</button>
+        </div>
+
+    </div>
+
+
+<script>
+    
+function $(selector){
+  var object = document.querySelector(selector);
+  return object;
+}
+
+const input = $(".calcul-input");
+
+var erase = false;
+
+input.addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+})
+
+$("#open").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "(";
+})
+$("#close").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += ")";
+})
+$("#mod").addEventListener("click", function(){
+  input.value += "%";
+  
+  erase = false;
+})
+$("#c").addEventListener("click", function(){
+  input.value = "";
+})
+$("#seven").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "7";
+})
+$("#eight").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "8";
+})
+$("#nine").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "9";
+})
+$("#slash").addEventListener("click", function(){
+  input.value += "/";
+  
+  erase = false;
+})
+$("#four").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "4";
+})
+$("#five").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "5";
+})
+$("#six").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "6";
+})
+$("#x").addEventListener("click", function(){
+  input.value += "*";
+  
+  erase = false;
+})
+$("#one").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "1";
+})
+$("#two").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "2";
+})
+$("#three").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "3";
+})
+$("#min").addEventListener("click", function(){
+  input.value += "-";
+  
+  erase = false;
+})
+$("#zero").addEventListener("click", function(){
+  if(erase == true){
+    input.value = "";
+    erase = false;
+  }
+  
+  input.value += "0";
+})
+$("#point").addEventListener("click", function(){
+  input.value += ".";
+  
+  erase = false;
+})
+$("#plus").addEventListener("click", function(){
+  input.value += "+";
+  
+  erase = false;
+})
+
+$("#equal").addEventListener("click", function(){
+  var calcul = eval(input.value)
+  erase = true;
+  
+  input.value = calcul;
+})
+
+function enter(){
+  var calcul = eval(input.value)
+  erase = true;
+  
+  input.blur();
+  input.value = calcul;
+}
+</script>
+</body>
+</html>
